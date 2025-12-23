@@ -1,0 +1,5 @@
+{
+  "name": "오빠가 점바주까",
+  "description": "동전을 던져 괘를 뽑고, AI가 당신의 질문과 상황에 맞춰 깊이 있는 주역 풀이를 제공합니다.",
+  "requestFramePermissions": []
+}
