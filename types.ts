@@ -13,6 +13,7 @@ export interface UserContext {
   name: string;
   question: string;
   situation: string;
+  mbti?: string;
 }
 
 export interface LineInfo {
@@ -25,8 +26,10 @@ export interface LineInfo {
 
 export interface HexagramInfo {
   name: string; // e.g. "건위천 (乾爲天)"
-  hanja: string; // Main text Hanja
-  meaning: string; // Traditional meaning/translation (ignoring user context)
+  hanja: string; // Name Hanja (e.g. 重天乾)
+  statement_hanja: string; // Hexagram Statement Original Text (e.g. 元亨利貞)
+  statement_translation: string; // Literal translation of the statement
+  explanation: string; // Detailed traditional explanation
 }
 
 export interface AnalysisResult {
@@ -34,4 +37,12 @@ export interface AnalysisResult {
   lines: LineInfo[]; // Array of 6 lines
   changedHexagramName?: string; // Name of the resulting hexagram if there are changing lines
   advice: string; // Personalized advice (~1500-2000 chars)
+  coreSummary: string[]; // 3 lines of actionable summary
+}
+
+// Window declaration for Portone (Iamport)
+declare global {
+  interface Window {
+    IMP: any;
+  }
 }

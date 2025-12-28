@@ -1,32 +1,133 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND2VXZS6EM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ND2VXZS6EM');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>오빠가 점바주까 - 주역 5000년의 지혜</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="오빠가 점바주까 - AI 주역 점괘" />
+    <meta property="og:description" content="동전을 던져 3000년 주역의 지혜를 구하세요. 당신의 고민에 대한 깊이 있는 통찰과 현실적인 조언을 드립니다." />
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" />
+    <meta property="og:url" content="https://service-653070125320.us-west1.run.app" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪙</text></svg>">
+
+    <title>오빠가 점바주까 - 주역 3000년을 이어온 성찰</title>
+    
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind & Config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#eebd2b", // Antique Gold
+              "primary-dark": "#c29a23",
+              "background-light": "#f8f7f6",
+              "background-dark": "#221d10", // Deep Oriental Dark
+              "surface-dark": "#2d2719",
+              "antique-white": "#e8e6e3", // Text color
+              "ivory-dark": "#d1c7b7", // Moving line color (darker ivory)
+              "unconfirmed": "#4a3b2a",
+              "input-dark": "#333333",
+              "border-gold": "#544d3b",
+            },
+            fontFamily: {
+              "sans": ["Pretendard", "Noto Sans KR", "sans-serif"],
+              "serif": ["Noto Serif KR", "serif"],
+              "display": ["Lexend", "sans-serif"],
+              "body": ["Pretendard", "Noto Sans KR", "sans-serif"],
+            },
+            backgroundImage: {
+                'oriental-gradient': 'linear-gradient(to bottom, #1a1a1a 0%, #221d10 100%)',
+            },
+            animation: {
+              'shimmer': 'shimmer 1.5s infinite',
+              'coin-spin': 'spin-coin 1.6s ease-out forwards',
+            },
+            keyframes: {
+              shimmer: {
+                '100%': { transform: 'translateX(100%)' },
+              },
+              'spin-coin': {
+                '0%': { transform: 'rotateY(0deg) scale(1)' },
+                '30%': { transform: 'rotateY(540deg) scale(1.1)' },
+                '60%': { transform: 'rotateY(1080deg) scale(1.1)' },
+                '100%': { transform: 'rotateY(1800deg) scale(1)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+
+    <!-- Portone (Iamport) SDK -->
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    
     <style>
       body {
-        font-family: 'Noto Sans KR', sans-serif;
-        background-color: #1a1a1a;
+        font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
         color: #e5e5e5;
+        min-height: 100vh;
+        min-height: 100dvh;
       }
-      h1, h2, h3, h4, .serif {
-        font-family: 'Noto Serif KR', serif;
+      
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #1a1a1a; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+      /* Background Noise Effect */
+      .bg-noise {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0.03;
+          background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAEZTmFWjCbyYrrRnPItK0Yfg1BK1GvhwqTmDv8AXXUGUfaP1T0yl8O2q-yyLze2x0wAsuQUI9UsRSNSA0BdsPWjhO5Q_AP5RGZh_17Kd9h24eugo_v3N1f-NHGBZhyLklqaVXQMsO_hWxc9OsiSCnjldBtCV3HF9YyhhcNVM7CVH8Z2dfmg4a6bm6C0600NaLmjxc4ZGT9UanMcDurZoqcdrza4pI4gs0OOMhpwP2rXbYzqOeG5OG_ZPvfhTpwl3fuV0f28IxaQFk);
       }
-      /* Custom Coin Animation */
-      @keyframes flip {
-        0% { transform: rotateY(0) rotateX(0) translateY(0); }
-        25% { transform: rotateY(360deg) rotateX(180deg) translateY(-80px); }
-        50% { transform: rotateY(720deg) rotateX(360deg) translateY(0); }
-        75% { transform: rotateY(1080deg) rotateX(540deg) translateY(-40px); }
-        100% { transform: rotateY(1440deg) rotateX(720deg) translateY(0); }
+      
+      .bg-oriental-pattern {
+        background-color: #221d10;
+        background-image: 
+            radial-gradient(circle at 50% 50%, rgba(238, 189, 43, 0.03) 0%, transparent 60%),
+            repeating-linear-gradient(45deg, rgba(238, 189, 43, 0.02) 0px, rgba(238, 189, 43, 0.02) 1px, transparent 1px, transparent 20px),
+            repeating-linear-gradient(-45deg, rgba(238, 189, 43, 0.02) 0px, rgba(238, 189, 43, 0.02) 1px, transparent 1px, transparent 20px);
       }
-      .animate-coin-flip {
-        animation: flip 1.5s ease-out forwards;
+
+      .coin-shadow {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      
+      .animate-coin-spin {
+        animation: spin-coin 1.6s ease-out forwards;
+        transform-style: preserve-3d;
       }
     </style>
   <script type="importmap">
